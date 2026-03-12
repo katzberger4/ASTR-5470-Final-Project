@@ -26,3 +26,16 @@ def nfw_acc(positions, M_vir, r_s, c):
     M_enc = nfw_enclosed_mass(r, M_vir, r_s, c)
     a_mag = -G * M_enc / r**3
     return (a_mag[:, None] * r_vec)
+
+def plummer_acc(positions, M, a):
+    """
+    Plummer sphere acceleration.
+    positions: (N,3) array
+    M: total mass
+    a: Plummer scale radius
+    """
+    r = np.linalg.norm(positions, axis=1)
+    denom = (r**2 + a**2)**1.5
+    # Avoid divide-by-zero
+    denom = np.where(denom == 0, np.inf, denom)
+    return -M * positions / denom[:, None]
