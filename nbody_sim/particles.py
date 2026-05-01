@@ -6,7 +6,12 @@ class ParticleSet:
         self.velocities = np.asarray(velocities, dtype=float)
         if self.positions.shape != self.velocities.shape:
             raise ValueError("positions and velocities must have same shape")
-        self.masses = None if masses is None else np.asarray(masses, dtype=float)
+
+        # FIX: assign equal masses if none provided
+        if masses is None:
+            self.masses = np.ones(self.positions.shape[0], dtype=float)
+        else:
+            self.masses = np.asarray(masses, dtype=float)
 
     @property
     def n(self):
