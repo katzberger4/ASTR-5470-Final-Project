@@ -22,3 +22,5 @@ In nbody_sim/examples:
 - Plot the particle orbits and radial profile evolution
 
   ```python orbits_and_radial_profile.py```
+
+Initial conditions can be updated from these .py files.
