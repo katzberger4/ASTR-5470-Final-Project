@@ -23,4 +23,4 @@ In nbody_sim/examples:
 
   ```python orbits_and_radial_profile.py```
 
-Initial conditions can be updated from these .py files.
+Initial conditions can be changed from these .py files.
