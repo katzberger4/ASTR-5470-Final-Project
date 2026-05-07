@@ -7,7 +7,7 @@ class ParticleSet:
         if self.positions.shape != self.velocities.shape:
             raise ValueError("positions and velocities must have same shape")
 
-        # FIX: assign equal masses if none provided
+        # Assign equal masses if none provided
         if masses is None:
             self.masses = np.ones(self.positions.shape[0], dtype=float)
         else:

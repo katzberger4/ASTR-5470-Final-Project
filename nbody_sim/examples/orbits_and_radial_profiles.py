@@ -2,16 +2,6 @@
 Test 3: Orbit visualization + radial profile evolution.
 """
 
-"""
-Optimized Test 3: Orbit visualization + radial profile evolution.
-
-Fixes:
-- Random initial positions (avoid r=0 singularities)
-- Reduced N for fast runtime
-- Larger dt for fewer steps
-- Plot only a subset of orbits
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
